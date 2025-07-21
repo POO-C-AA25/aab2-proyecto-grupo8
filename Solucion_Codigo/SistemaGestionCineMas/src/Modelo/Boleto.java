@@ -1,15 +1,28 @@
 
 package Modelo;
 
-public class Boleto extends Producto{
-    private Funcion funcion;
-
-    public Boleto(Funcion funcion, double precio, int cantidad) {
-        super(precio, cantidad);
-        this.funcion = funcion;
+public class Boleto {
+    private int cantidad;
+    private double precio;
+    
+    public Boleto(){
+        
     }
-    public double calcularTotal(){
-        return this.precio * this.cantidad;
+    public Boleto(int cantidad, double precio) {
+        this.cantidad = cantidad;
+        this.precio = precio;
+    }
+
+    public double calcularTotal() {
+        return cantidad * precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public double getPrecio() {
+        return precio;
     }
 }
 
