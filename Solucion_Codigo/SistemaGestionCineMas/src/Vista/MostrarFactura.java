@@ -2,11 +2,11 @@
 package Vista;
 
 import Modelo.Snack;
-import Modelo.Venta;
+import Modelo.RegistroVenta;
 
 public class MostrarFactura {
     // Metodo para mostrar la factura
-    public void mostrarFactura(Venta venta) {
+    public void mostrarFactura(RegistroVenta venta) {
         System.out.println("\n+---- FACTURA ----+");
         System.out.println("Pelicula: " + venta.getPelicula().getTitulo());
         System.out.println("Horario: " + venta.getHorario());
