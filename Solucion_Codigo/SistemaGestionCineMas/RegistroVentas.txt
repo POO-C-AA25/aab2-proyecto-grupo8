@@ -1,0 +1,34 @@
++---- FACTURA ----+
+Pelicula: The Last Adventure
+Horario: 21:00
+Sala: Sala 2
+Precio por boleto: $7,50
+Cantidad boletos: 3
+Subtotal boletos: $22,50
+
+Snacks comprados:
+  Chocolate - Cantidad: 3 - Precio unitario: $2,50 - Subtotal: $7,50
+Subtotal snacks: $7,50
+
+Descuento aplicado: $2,00
+Motivo descuento: Ninguno + Descuento combo snacks y boletos
+----------------------------
+TOTAL A PAGAR: $28,00
+----------------------------
++---- FACTURA ----+
+Pelicula: La Casa Misteriosa
+Horario: 13:00
+Sala: Sala 3
+Precio por boleto: $6,00
+Cantidad boletos: 4
+Subtotal boletos: $24,00
+
+Snacks comprados:
+  Ninguno
+Subtotal snacks: $0,00
+
+Descuento aplicado: $0,00
+Motivo descuento: Ninguno
+----------------------------
+TOTAL A PAGAR: $24,00
+----------------------------
