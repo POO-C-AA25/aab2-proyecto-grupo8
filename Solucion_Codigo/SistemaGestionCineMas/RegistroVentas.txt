@@ -32,3 +32,38 @@ Motivo descuento: Ninguno
 ----------------------------
 TOTAL A PAGAR: $24,00
 ----------------------------
++---- FACTURA ----+
+Pelicula: The Last Adventure
+Horario: 19:00
+Sala: Sala 1
+Precio por boleto: $7,50
+Cantidad boletos: 23
+Subtotal boletos: $172,50
+
+Snacks comprados:
+  Popcorn - Cantidad: 5 - Precio unitario: $3,50 - Subtotal: $17,50
+Subtotal snacks: $17,50
+
+Descuento aplicado: $19,25
+Motivo descuento: Descuento por compra de 5 o mas boletos + Descuento combo snacks y boletos
+----------------------------
+TOTAL A PAGAR: $170,75
+----------------------------
++---- FACTURA ----+
+Pelicula: The Last Adventure
+Horario: 19:00
+Sala: Sala 1
+Precio por boleto: $7,50
+Cantidad boletos: 12
+Subtotal boletos: $90,00
+
+Snacks comprados:
+  Popcorn - Cantidad: 2 - Precio unitario: $3,50 - Subtotal: $7,00
+  Chocolate - Cantidad: 2 - Precio unitario: $2,50 - Subtotal: $5,00
+Subtotal snacks: $12,00
+
+Descuento aplicado: $11,00
+Motivo descuento: Descuento por compra de 5 o mas boletos + Descuento combo snacks y boletos
+----------------------------
+TOTAL A PAGAR: $91,00
+----------------------------

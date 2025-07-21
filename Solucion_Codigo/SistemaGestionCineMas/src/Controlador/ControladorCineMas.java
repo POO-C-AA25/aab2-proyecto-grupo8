@@ -2,11 +2,14 @@
 package Controlador;
 
 import Modelo.*;
-import Vista.VistaCineMas;
+import Vista.*;
 import java.util.ArrayList;
 
 public class ControladorCineMas {
-    private VistaCineMas vista = new VistaCineMas();
+    private MostrarMenuPrincipal menuPrincipal= new MostrarMenuPrincipal();
+    private MenuDeSeleccion menuSeleccion = new MenuDeSeleccion();
+    private MostrarFactura mostrarFactura = new MostrarFactura();
+    
     private EntradaSalidaArchivos archivos = new EntradaSalidaArchivos();
 
     private Pelicula[] peliculas;
@@ -41,33 +44,33 @@ public class ControladorCineMas {
     }
 
     public void ejecutarPrograma() {
-        vista.mostrarTitulo();
+        menuPrincipal.mostrarTitulo();
 
         // Metodo para mostrar la cartelera completa con horarios, salas y precios
-        vista.mostrarCartelera(titulos, horarios, salas, precios);
+        menuPrincipal.mostrarCartelera(titulos, horarios, salas, precios);
 
         // Metodo para Seleccionar la pelicula
-        int seleccionPelicula = vista.seleccionarPelicula();
+        int seleccionPelicula = menuSeleccion.seleccionarPelicula();
         Pelicula peliculaElegida = peliculas[seleccionPelicula];
 
         // Metodo para Seleccionar el horario y sala
-        int seleccionHorario = vista.seleccionarHorario(peliculaElegida.getHorarios().size());
+        int seleccionHorario = menuSeleccion.seleccionarHorario(peliculaElegida.getHorarios().size());
         String horarioElegido = peliculaElegida.getHorarios().get(seleccionHorario);
         String salaElegida = peliculaElegida.getSalas().get(seleccionHorario);
 
         // Metodo para ingresar la Cantidad de boletos
-        int cantidadBoletos = vista.ingresarCantidadBoletos();
+        int cantidadBoletos = menuSeleccion.ingresarCantidadBoletos();
         Boleto boleto = new Boleto(cantidadBoletos, peliculaElegida.getPrecio());
 
         // Metodo para selccionar los snacks
         ArrayList<Snack> snacksComprados = new ArrayList<>();
         while(true){
-            vista.mostrarSnacksDisponibles(snacksDisponibles);
-            int opcionSnack = vista.seleccionarSnack(snacksDisponibles.size() + 1);
+            menuPrincipal.mostrarSnacksDisponibles(snacksDisponibles);
+            int opcionSnack = menuSeleccion.seleccionarSnack(snacksDisponibles.size() + 1);
             if(opcionSnack == snacksDisponibles.size()){ // Opcion "Ninguno"
                 break;
             }
-            int cantidadSnack = vista.ingresarCantidadSnack();
+            int cantidadSnack = menuSeleccion.ingresarCantidadSnack();
             Snack snackBase = snacksDisponibles.get(opcionSnack);
             snacksComprados.add(new Snack(snackBase.getNombre(), snackBase.getPrecio(), cantidadSnack));
         }
@@ -79,7 +82,7 @@ public class ControladorCineMas {
         aplicarDescuentos(venta);
 
         // Metodo para Mostrar factura final
-        vista.mostrarFactura(venta);
+        mostrarFactura.mostrarFactura(venta);
 
         // Metodo para Registrar venta para historial
         registroVentas.add(venta);

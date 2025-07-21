@@ -12,9 +12,9 @@ public class EntradaSalidaArchivos {
     // Metodo para Leer los Titulos de un archivo
     public void leerTitulos(String[] titulos) {
         try {
-            Scanner objLecturaFile = new Scanner(new File("Cartelera.csv"));
+            Scanner objLecturaFile = new Scanner(new File("Peliculas.csv"));
             if (objLecturaFile.hasNextLine()) {
-                String[] partes = objLecturaFile.nextLine().split(",");
+                String[] partes = objLecturaFile.nextLine().split(";");
                 for (int i = 0; i < partes.length; i++) {
                     titulos[i] = partes[i];
                 }
@@ -27,10 +27,10 @@ public class EntradaSalidaArchivos {
     // Metodo para Leer los Precios de un archivo
     public void leerPrecios(double[] precios) {
         try {
-            Scanner objLecturaFile = new Scanner(new File("Cartelera.csv"));
+            Scanner objLecturaFile = new Scanner(new File("Peliculas.csv"));
             if (objLecturaFile.hasNextLine()) objLecturaFile.nextLine();
             if (objLecturaFile.hasNextLine()) {
-                String[] partes = objLecturaFile.nextLine().split(",");
+                String[] partes = objLecturaFile.nextLine().split(";");
                 for (int i = 0; i < partes.length; i++) {
                     precios[i] = Double.parseDouble(partes[i]);
                 }
@@ -45,7 +45,7 @@ public class EntradaSalidaArchivos {
         try {
             Scanner objLecturaFile = new Scanner(new File("Horarios.csv"));
             while (objLecturaFile.hasNextLine()) {
-                String[] partes = objLecturaFile.nextLine().split(",");
+                String[] partes = objLecturaFile.nextLine().split(";");
                 ArrayList<String> lista = new ArrayList<>();
                 for (int i = 0; i < partes.length; i++) {
                     lista.add(partes[i]);
@@ -62,7 +62,7 @@ public class EntradaSalidaArchivos {
         try {
             Scanner objLecturaFile = new Scanner(new File("Salas.csv"));
             while (objLecturaFile.hasNextLine()) {
-                String[] partes = objLecturaFile.nextLine().split(",");
+                String[] partes = objLecturaFile.nextLine().split(";");
                 ArrayList<String> lista = new ArrayList<>();
                 for (int i = 0; i < partes.length; i++) {
                     lista.add(partes[i]);
@@ -79,7 +79,7 @@ public class EntradaSalidaArchivos {
         try {
             Scanner objLecturaFile = new Scanner(new File("Snacks.csv"));
             while (objLecturaFile.hasNextLine()) {
-                String[] partes = objLecturaFile.nextLine().split(",");
+                String[] partes = objLecturaFile.nextLine().split(";");
                 snacks.add(new Snack(partes[0], Double.parseDouble(partes[1]), 0));
             }
             objLecturaFile.close();
