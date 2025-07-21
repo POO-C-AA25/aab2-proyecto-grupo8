@@ -1,16 +1,35 @@
 
 package Modelo;
 
-public class Snack extends Producto{
+public class Snack {
     private String nombre;
+    private double precio;
+    private int cantidad;
 
+    public Snack(){
+        
+    }
+    
     public Snack(String nombre, double precio, int cantidad) {
-        super(precio, cantidad);
         this.nombre = nombre;
-    }
-    public double calcularTotal(){
-        return this.precio * this.cantidad;
+        this.precio = precio;
+        this.cantidad = cantidad;
     }
 
+    public double calcularTotal() {
+        return precio * cantidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
 }
 

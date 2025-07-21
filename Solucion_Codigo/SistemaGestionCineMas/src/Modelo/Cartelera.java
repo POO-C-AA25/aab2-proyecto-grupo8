@@ -1,8 +1,16 @@
 
 package Modelo;
-import java.util.List;
+
+import java.util.ArrayList;
 
 public class Cartelera {
-    private List<Pelicula> peliculas;
+    private ArrayList<Pelicula> peliculas;
+
+    public Cartelera(ArrayList<Pelicula> peliculas) {
+        this.peliculas = peliculas;
+    }
+    
+    
+    
     
 }

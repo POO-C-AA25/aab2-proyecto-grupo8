@@ -10,8 +10,8 @@ public class ControladorCineMas {
     private MenuDeSeleccion menuSeleccion = new MenuDeSeleccion();
     private MostrarFactura mostrarFactura = new MostrarFactura();
     
-    private EntradaSalidaArchivos archivos = new EntradaSalidaArchivos();
-
+    private LectorArchivo lector = new LectorArchivo();
+    private EscritorArchivo escritor = new EscritorArchivo();
     private Pelicula[] peliculas;
     private String[] titulos;
     private double[] precios;
@@ -30,11 +30,11 @@ public class ControladorCineMas {
         salas = new ArrayList<>();
         snacksDisponibles = new ArrayList<>();
 
-        archivos.leerTitulos(titulos);
-        archivos.leerPrecios(precios);
-        archivos.leerHorarios(horarios);
-        archivos.leerSalas(salas);
-        archivos.leerSnacks(snacksDisponibles);
+        lector.leerTitulos(titulos);
+        lector.leerPrecios(precios);
+        lector.leerHorarios(horarios);
+        lector.leerSalas(salas);
+        lector.leerSnacks(snacksDisponibles);
 
         // Creamos objetos de tipo Pelicula
         peliculas = new Pelicula[titulos.length];
@@ -86,7 +86,7 @@ public class ControladorCineMas {
 
         // Metodo para Registrar venta para historial
         registroVentas.add(venta);
-        archivos.guardarFacturaEnArchivo(venta);
+        escritor.guardarFacturaEnArchivo(venta);
         
         
     }
