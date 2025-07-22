@@ -9,6 +9,7 @@ public class ControladorCineMas {
     private MostrarMenuPrincipal menuPrincipal= new MostrarMenuPrincipal();
     private MenuDeSeleccion menuSeleccion = new MenuDeSeleccion();
     private MostrarFactura mostrarFactura = new MostrarFactura();
+    private Promocion promocion = new PromocionDiaEspecial(12.0, 2);
     
     private LectorArchivo lector = new LectorArchivo();
     private EscritorArchivo escritor = new EscritorArchivo();
@@ -18,7 +19,7 @@ public class ControladorCineMas {
     private ArrayList<ArrayList<String>> horarios;
     private ArrayList<ArrayList<String>> salas;
     private ArrayList<Snack> snacksDisponibles;
-    private ArrayList<Venta> registroVentas; 
+    private ArrayList<RegistroVenta> registroVentas; 
 
     public ControladorCineMas() {
         registroVentas = new ArrayList<>();
@@ -76,10 +77,10 @@ public class ControladorCineMas {
         }
 
         // Crearmos venta con descuento inicial 0 y descripcion "Ninguno"
-        Venta venta = new Venta(peliculaElegida, horarioElegido, salaElegida, boleto, snacksComprados, 0, "Ninguno");
+        RegistroVenta venta = new RegistroVenta(peliculaElegida, horarioElegido, salaElegida, boleto, snacksComprados, 0, "Ninguno");
 
         // Metodo para Aplicar descuentos automáticos que modifican la venta
-        aplicarDescuentos(venta);
+        calcularPromocion();
 
         // Metodo para Mostrar factura final
         mostrarFactura.mostrarFactura(venta);
@@ -89,26 +90,5 @@ public class ControladorCineMas {
         escritor.guardarFacturaEnArchivo(venta);
         
         
-    }
-
-    // Metodo para Aplicar descuentos según reglas definidas
-    private void aplicarDescuentos(Venta venta){
-        double descuento = 0;
-        String descripcion = "Ninguno";
-
-        // Metodo que se encarga de dar un Descuento del 10% si compra 5 o más boletos
-        if(venta.getBoleto().getCantidad() >= 5){
-            descuento = venta.getBoleto().calcularTotal() * 0.10;
-            descripcion = "Descuento por compra de 5 o mas boletos";
-        }
-
-        // Metodo que se encarga de dar un Descuento extra por combo snacks y boletos
-        if(!venta.getSnacks().isEmpty() && venta.getBoleto().getCantidad() >= 3){
-            descuento += 2.0;
-            descripcion += " + Descuento combo snacks y boletos";
-        }
-
-        venta.setDescuentoAplicado(descuento);
-        venta.setDescripcionDescuento(descripcion);
     }
 }

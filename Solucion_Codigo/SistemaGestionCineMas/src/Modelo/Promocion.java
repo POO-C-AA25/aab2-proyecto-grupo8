@@ -1,7 +1,9 @@
 
 package Modelo;
 
-public abstract class Promocion {
+import java.io.Serializable;
+
+public abstract class Promocion implements Serializable{
     protected double precio;
 
     public Promocion(double precio) {
