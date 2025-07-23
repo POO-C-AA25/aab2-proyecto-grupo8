@@ -8,9 +8,9 @@ public class PromocionPorCantidad extends Promocion {
     }
 
     @Override
-    public double aplicarPromocion(RegistroVenta venta) {
-        if (venta.getBoleto().getCantidad() >= 5) {
-            return venta.getBoleto().calcularTotal() * 0.10;
+    public double aplicarPromocion(RegistroVenta registro) {
+        if (registro.getBoleto().getCantidad() >= 5) {
+            return registro.getBoleto().calcularTotal() * 0.10;
         }
         return 0;
     }
