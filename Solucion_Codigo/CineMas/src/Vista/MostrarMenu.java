@@ -3,7 +3,11 @@ package Vista;
 import Modelo.*;
 import java.util.ArrayList;
 
-public class VistaCineMas {
+public class MostrarMenu {
+
+    public MostrarMenu() {
+    }
+
    public void mostrarTitulo() {
         System.out.println("+--------------------------------+");
         System.out.println("|      CINEMAS LOJA - SISTEMA    |");
@@ -17,7 +21,7 @@ public class VistaCineMas {
             System.out.println("[" + (i + 1) + "] " + p.getTitulo() + " - Precio: $" + p.getPrecio());
             System.out.println("   Horarios disponibles:");
             for (int j = 0; j < p.getHorarios().size(); j++) {
-                System.out.println("     (" + (j + 1) + ") " + p.getHorarios().get(j) + " - Sala: " + p.getSalas().get(j));
+                System.out.println("     (" + (j + 1) + ") " + p.getHorarios().get(j) + " - " + p.getSalas().get(j));
             }
         }
     }
@@ -45,7 +49,7 @@ public class VistaCineMas {
             System.out.println("  Ninguno");
         } else {
             for (Snack s : registro.getSnacks()) {
-                System.out.println("  " + s.getNombre() + " - Cantidad: " + s.getCantidad() + " - Precio unitario: $" + s.getPrecio() + " - Subtotal: $" + s.calcularTotal());
+                System.out.println("" + s.getNombre() + "\nCantidad: " + s.getCantidad() + "\nPrecio unitario: $" + s.getPrecio() + "\nSubtotal: $" + s.calcularTotal());
             }
         }
 

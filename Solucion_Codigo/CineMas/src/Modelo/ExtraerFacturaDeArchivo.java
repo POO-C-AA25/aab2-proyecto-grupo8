@@ -20,7 +20,7 @@ public class ExtraerFacturaDeArchivo {
             }
 
         } catch (EOFException e) {
-            // Fin esperado, no hacer nada
+            
         } catch (Exception e) {
             System.out.println("Error al leer facturas: " + e.getMessage());
         }

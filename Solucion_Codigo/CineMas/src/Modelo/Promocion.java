@@ -1,7 +1,10 @@
 package Modelo;
 
 public abstract class Promocion {
-    public abstract double aplicar(RegistroVenta venta);
+
+    public Promocion() {
+    }
+    public abstract double aplicarPromocion(RegistroVenta venta);
     public abstract String getDescripcion();
 }
 

@@ -2,8 +2,13 @@
 package Modelo;
 
 public class PromocionPorCantidad extends Promocion {
+
+    public PromocionPorCantidad() {
+        super();
+    }
+
     @Override
-    public double aplicar(RegistroVenta venta) {
+    public double aplicarPromocion(RegistroVenta venta) {
         if (venta.getBoleto().getCantidad() >= 5) {
             return venta.getBoleto().calcularTotal() * 0.10;
         }
@@ -12,6 +17,6 @@ public class PromocionPorCantidad extends Promocion {
 
     @Override
     public String getDescripcion() {
-        return "Descuento por compra de 5 o más boletos";
+        return "Descuento por compra de 5 o mas boletos";
     }
 }

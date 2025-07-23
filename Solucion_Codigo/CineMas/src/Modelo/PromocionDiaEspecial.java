@@ -2,8 +2,13 @@
 package Modelo;
 
 public class PromocionDiaEspecial extends Promocion {
+
+    public PromocionDiaEspecial() {
+        super();
+    }
+
     @Override
-    public double aplicar(RegistroVenta venta) {
+    public double aplicarPromocion(RegistroVenta venta) {
         if (!venta.getSnacks().isEmpty() && venta.getBoleto().getCantidad() >= 3) {
             return 2.0;
         }

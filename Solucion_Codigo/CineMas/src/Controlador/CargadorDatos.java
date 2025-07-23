@@ -3,18 +3,25 @@ package Controlador;
 import Modelo.*;
 import java.util.ArrayList;
 public class CargadorDatos {
-    private PeliculasArchivo archivos = new PeliculasArchivo();
+    private ArchivoPeliculas peliculaArchivos = new ArchivoPeliculas();
+    private ArchivoSalas salasArchivos = new ArchivoSalas();
+    private ArchivoHorarios horariosArchivos = new ArchivoHorarios();
+    private ArchivoSnacks snacksArchivos = new ArchivoSnacks();
 
+
+    public CargadorDatos() {
+    }
+    
     public Pelicula[] cargarPeliculas() {
         String[] titulos = new String[3];
         double[] precios = new double[3];
         ArrayList<ArrayList<String>> horarios = new ArrayList<>();
         ArrayList<ArrayList<String>> salas = new ArrayList<>();
 
-        archivos.leerTitulos(titulos);
-        archivos.leerPrecios(precios);
-        archivos.leerHorarios(horarios);
-        archivos.leerSalas(salas);
+        peliculaArchivos.leerTitulos(titulos);
+        peliculaArchivos.leerPrecios(precios);
+        horariosArchivos.leerHorarios(horarios);
+        salasArchivos.leerSalas(salas);
 
         Pelicula[] peliculas = new Pelicula[titulos.length];
         for (int i = 0; i < titulos.length; i++) {
@@ -26,7 +33,7 @@ public class CargadorDatos {
 
     public ArrayList<Snack> cargarSnacks() {
         ArrayList<Snack> snacks = new ArrayList<>();
-        archivos.leerSnacks(snacks);
+        snacksArchivos.leerSnacks(snacks);
         return snacks;
     }
 }
