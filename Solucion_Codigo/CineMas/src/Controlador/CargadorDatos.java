@@ -7,8 +7,6 @@ public class CargadorDatos {
     ArchivoSalas salasArchivos = new ArchivoSalas();
     ArchivoHorarios horariosArchivos = new ArchivoHorarios();
     ArchivoSnacks snacksArchivos = new ArchivoSnacks();
-
-
     public CargadorDatos() {
     }
     
