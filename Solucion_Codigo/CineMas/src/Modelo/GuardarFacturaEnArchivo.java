@@ -12,7 +12,7 @@ public class GuardarFacturaEnArchivo {
     public void guardarFactura(ArrayList<RegistroVenta> listaVentas) {
         try {
             File archivo = new File("RegistroVentas.dat");
-            FileOutputStream fos = new FileOutputStream(archivo, false); // Sobrescribe archivo
+            FileOutputStream fos = new FileOutputStream(archivo, true); 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             for (RegistroVenta registro : listaVentas) {

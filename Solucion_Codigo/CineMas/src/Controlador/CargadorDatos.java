@@ -3,10 +3,10 @@ package Controlador;
 import Modelo.*;
 import java.util.ArrayList;
 public class CargadorDatos {
-    private ArchivoPeliculas peliculaArchivos = new ArchivoPeliculas();
-    private ArchivoSalas salasArchivos = new ArchivoSalas();
-    private ArchivoHorarios horariosArchivos = new ArchivoHorarios();
-    private ArchivoSnacks snacksArchivos = new ArchivoSnacks();
+    ArchivoPeliculas peliculaArchivos = new ArchivoPeliculas();
+    ArchivoSalas salasArchivos = new ArchivoSalas();
+    ArchivoHorarios horariosArchivos = new ArchivoHorarios();
+    ArchivoSnacks snacksArchivos = new ArchivoSnacks();
 
 
     public CargadorDatos() {

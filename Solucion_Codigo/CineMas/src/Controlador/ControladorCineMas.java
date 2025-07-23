@@ -6,14 +6,14 @@ import Vista.*;
 import java.util.ArrayList;
 
 public class ControladorCineMas {
-    private MostrarMenu menu = new MostrarMenu();
-    private MenuDeSeleccion seleccion = new MenuDeSeleccion();
-    private GuardarFacturaEnArchivo guardarArchivo = new GuardarFacturaEnArchivo();
-    private ExtraerFacturaDeArchivo extraerFactura = new ExtraerFacturaDeArchivo();
+    MostrarMenu menu = new MostrarMenu();
+    MenuDeSeleccion seleccion = new MenuDeSeleccion();
+    GuardarFacturaEnArchivo guardarArchivo = new GuardarFacturaEnArchivo();
+    ExtraerFacturaDeArchivo extraerFactura = new ExtraerFacturaDeArchivo();
 
-    private Pelicula[] peliculas;
-    private ArrayList<Snack> snacksDisponibles;
-    private ArrayList<RegistroVenta> registroVentas;
+    Pelicula[] peliculas;
+    ArrayList<Snack> snacksDisponibles;
+    ArrayList<RegistroVenta> registroVentas;
 
     public ControladorCineMas() {
         registroVentas = extraerFactura.ExtraerFacturas();
